@@ -65,3 +65,67 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noteix AI - Earn & Note</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; text-align: center; padding: 10px; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        h1 { color: #1a73e8; margin-bottom: 5px; }
+        #note-display { width: 100%; height: 180px; border: 2px solid #ddd; border-radius: 12px; padding: 15px; font-size: 16px; margin: 15px 0; box-sizing: border-box; }
+        .btn { padding: 12px 20px; font-size: 15px; border: none; border-radius: 50px; cursor: pointer; transition: 0.3s; margin: 5px; font-weight: bold; width: 100%; }
+        .btn-start { background: #1a73e8; color: white; }
+        .btn-ai { background: #8e24aa; color: white; }
+        
+        /* Earning Section Design */
+        .ad-space { background: #e8f0fe; border: 2px dashed #1a73e8; padding: 20px; margin: 20px 0; border-radius: 10px; color: #1a73e8; font-weight: bold; }
+        .donate-section { margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee; }
+        .btn-donate { background: #ffdd00; color: #000; width: auto; display: inline-block; padding: 10px 25px; text-decoration: none; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Noteix AI ✨</h1>
+    <p>Voice Note banayein aur AI se sudharein</p>
+
+    <div class="ad-space">
+        📢 Ad Space (Vigyapan yahan dikhega)
+    </div>
+
+    <textarea id="note-display" placeholder="Bolna shuru karein..."></textarea>
+    
+    <button class="btn btn-start" onclick="startRecognition()">🎙️ Start Voice Note</button>
+    <button class="btn btn-ai" onclick="askAI()">✨ AI Smart Edit</button>
+
+    <div class="donate-section">
+        <p>Agar aapko app pasand aaya toh support karein:</p>
+        <a href="https://www.buymeacoffee.com/" target="_blank" class="btn-donate">☕ Buy Me a Coffee</a>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById('note-display');
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'hi-IN';
+
+    function startRecognition() {
+        recognition.start();
+        alert("Main sun raha hoon, boliye...");
+    }
+
+    recognition.onresult = (event) => {
+        display.value += event.results[0][0].transcript + " ";
+    };
+
+    function askAI() {
+        if(display.value === "") return alert("Pehle kuch boliye!");
+        display.value = "AI Pro Mode: " + display.value.trim();
+    }
+</script>
+
+</body>
+    </html>
