@@ -3,73 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noteix AI - Smart Voice App</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; text-align: center; padding: 20px; }
-        .container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        h1 { color: #1a73e8; }
-        #status { color: #5f6368; margin-bottom: 20px; }
-        #note-display { width: 100%; height: 200px; border: 2px solid #e0e0e0; border-radius: 10px; padding: 15px; margin-bottom: 20px; font-size: 16px; outline: none; }
-        .btn { padding: 12px 25px; font-size: 16px; border: none; border-radius: 50px; cursor: pointer; transition: 0.3s; margin: 5px; }
-        .btn-start { background: #1a73e8; color: white; }
-        .btn-ai { background: #8e24aa; color: white; } /* AI Feature Button */
-        .btn:hover { opacity: 0.8; transform: scale(1.05); }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>Noteix AI ✨</h1>
-    <p id="status">Boliye, main sun raha hoon...</p>
-    <textarea id="note-display" placeholder="Aapki awaz yahan text ban jayegi..."></textarea>
-    <br>
-    <button class="btn btn-start" onclick="startRecognition()">🎙️ Bolna Shuru Karein</button>
-    <button class="btn btn-ai" onclick="askAI()">✨ AI se Sudharein</button>
-</div>
-
-<script>
-    const status = document.getElementById('status');
-    const display = document.getElementById('note-display');
-
-    // Voice Recognition Logic
-    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-    recognition.lang = 'hi-IN';
-
-    function startRecognition() {
-        recognition.start();
-        status.innerText = "Sun raha hoon... (Listening)";
-    }
-
-    recognition.onresult = (event) => {
-        const text = event.results[0][0].transcript;
-        display.value += text + " ";
-        status.innerText = "Sahi hai! Aur boliye.";
-    };
-
-    // AI Future Feature (Smart Correction)
-    function askAI() {
-        if (display.value.trim() === "") {
-            alert("Pehle kuch boliye ya likhiye!");
-            return;
-        }
-        status.innerText = "AI soch raha hai...";
-        
-        // Abhi ke liye hum ek smart logic add kar rahe hain jo text ko format karega
-        setTimeout(() => {
-            let originalText = display.value;
-            display.value = "AI Improved: " + originalText.charAt(0).toUpperCase() + originalText.slice(1);
-            status.innerText = "AI ne text thik kar diya!";
-        }, 1000);
-    }
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noteix AI - Earn & Note</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; text-align: center; padding: 10px; }
@@ -128,4 +61,8 @@
 </script>
 
 </body>
-    </html>
+</html>
+<div style="margin-top: 15px;">
+    <p style="font-size: 14px; color: #555;">Kul milakar kitne log aaye:</p>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=noteix-ai&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
+</div>
