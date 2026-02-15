@@ -13,20 +13,20 @@
         .btn-start { background: #1a73e8; color: white; }
         .btn-ai { background: #8e24aa; color: white; }
         
-        /* Earning Section Design */
-        .ad-space { background: #e8f0fe; border: 2px dashed #1a73e8; padding: 20px; margin: 20px 0; border-radius: 10px; color: #1a73e8; font-weight: bold; }
-        .donate-section { margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee; }
-        .btn-donate { background: #ffdd00; color: #000; width: auto; display: inline-block; padding: 10px 25px; text-decoration: none; border-radius: 10px; }
+        /* Earning Section */
+        .ad-space { background: #fff9c4; border: 2px dashed #fbc02d; padding: 20px; margin: 20px 0; border-radius: 10px; color: #bc5100; font-weight: bold; }
+        .counter-section { margin-top: 20px; background: #f1f3f4; padding: 10px; border-radius: 10px; }
+        .btn-donate { background: #ffdd00; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 10px; display: inline-block; margin-top: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>Noteix AI ✨</h1>
-    <p>Voice Note banayein aur AI se sudharein</p>
+    <p>Voice se likhein aur paise kamayein</p>
 
     <div class="ad-space">
-        📢 Ad Space (Vigyapan yahan dikhega)
+        📢 Ads Yahan Dikhayein (Google AdSense)
     </div>
 
     <textarea id="note-display" placeholder="Bolna shuru karein..."></textarea>
@@ -34,9 +34,11 @@
     <button class="btn btn-start" onclick="startRecognition()">🎙️ Start Voice Note</button>
     <button class="btn btn-ai" onclick="askAI()">✨ AI Smart Edit</button>
 
-    <div class="donate-section">
-        <p>Agar aapko app pasand aaya toh support karein:</p>
-        <a href="https://www.buymeacoffee.com/" target="_blank" class="btn-donate">☕ Buy Me a Coffee</a>
+    <div class="counter-section">
+        <p style="font-size: 14px; margin-bottom: 5px;">Total Visitors:</p>
+        <img src="https://hitwebcounter.com/counter/counter.php?page=noteix-ai-ffyt&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
+        <br>
+        <a href="https://www.buymeacoffee.com/" target="_blank" class="btn-donate">☕ Support My Work</a>
     </div>
 </div>
 
@@ -56,13 +58,9 @@
 
     function askAI() {
         if(display.value === "") return alert("Pehle kuch boliye!");
-        display.value = "AI Pro Mode: " + display.value.trim();
+        display.value = "AI Improved: " + display.value.trim();
     }
 </script>
 
 </body>
 </html>
-<div style="margin-top: 15px;">
-    <p style="font-size: 14px; color: #555;">Kul milakar kitne log aaye:</p>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=noteix-ai&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
-</div>
